@@ -1,6 +1,13 @@
 const ValidationError = require('./validation-error');
 
-// Your code here
+class MaximumLengthExceededError extends ValidationError {
+  constructor(message, ...params) {
+    super(...params);
+
+    this.name = 'MaximumLengthExceededError';
+    this.message = message?`Maximum length exceeded by ${message}`: `Maximum length exceeded`
+  }
+}
 
 /****************************************************************************/
 /******************* DO NOT EDIT CODE BELOW THIS LINE ***********************/
